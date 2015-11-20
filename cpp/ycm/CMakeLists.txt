@@ -176,6 +176,7 @@ if ( USE_SYSTEM_BOOST )
 else()
   set( Boost_INCLUDE_DIR ${BoostParts_SOURCE_DIR} )
   set( Boost_LIBRARIES BoostParts )
+  add_definitions(-DBOOST_PYTHON_STATIC_LIB)
 endif()
 
 # The SYSTEM flag makes sure that -isystem[header path] is passed to the

@@ -77,6 +77,8 @@ include_directories(
   ${PYTHON_INCLUDE_DIRS}
   )
 
+add_definitions(-DBOOST_PYTHON_STATIC_LIB)
+
 add_library( BoostParts ${SOURCES} )
 
 #############################################################################
