@@ -82,10 +82,12 @@
 // Some things we need in order to get Python.h to work with compilers other
 // than MSVC on Win32
 //
-#if defined(_WIN32)
-# if defined(__GNUC__)
+#if defined(_WIN32) || defined(__CYGWIN__)
+# if defined(__GNUC__) && defined(__CYGWIN__)
 
-#  define SIZEOF_LONG 4
+#  ifndef SIZEOF_LONG
+#   define SIZEOF_LONG 4
+#  endif
 
 #  if PY_MAJOR_VERSION < 2 || PY_MAJOR_VERSION == 2 && PY_MINOR_VERSION <= 2
 
